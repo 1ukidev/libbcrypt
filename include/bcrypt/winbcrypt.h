@@ -6,7 +6,7 @@
 #include "crypt_blowfish.h"
 #include "./bcrypt.h"
 
-class BCrypt {
+class bcrypt {
 public:
 	static std::string generateHash(const std::string & password, int workload = 12) {
 		char salt[BCRYPT_HASHSIZE];

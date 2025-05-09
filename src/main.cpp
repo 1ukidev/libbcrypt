@@ -1,19 +1,22 @@
-#include "bcrypt/BCrypt.hpp"
+#include "bcrypt/bcrypt.hpp"
+
+#include <cstdlib>
 #include <iostream>
 
-int main(){
-	std::string right_password = "right_password";
-	std::string wrong_password = "wrong_password";
+int main()
+{
+    std::string right_password = "right_password";
+    std::string wrong_password = "wrong_password";
 
-	std::cout << "generate hash... " << std::flush;
-	std::string hash = BCrypt::generateHash(right_password, 12);
-	std::cout << "done." << std::endl;
+    std::cout << "generate hash... ";
+    std::string hash = bcrypt::generateHash(right_password, 12);
+    std::cout << "done." << '\n';
 
-	std::cout << "checking right password: " << std::flush
-			  << BCrypt::validatePassword(right_password,hash) << std::endl;
+    std::cout << "checking right password: "
+              << bcrypt::validatePassword(right_password, hash) << '\n';
 
-	std::cout << "checking wrong password: " << std::flush
-			  << BCrypt::validatePassword(wrong_password,hash) << std::endl;
+    std::cout << "checking wrong password: "
+              << bcrypt::validatePassword(wrong_password, hash) << '\n';
 
-	return 0;
+    return EXIT_SUCCESS;
 }

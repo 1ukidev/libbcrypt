@@ -9,7 +9,7 @@
 #include <string>
 #include <stdexcept>
 
-class BCrypt {
+class bcrypt {
 public:
     static std::string generateHash(const std::string & password, int workload = 12){
         char salt[BCRYPT_HASHSIZE];
