@@ -61,7 +61,7 @@ add_library(
 
 set_target_properties(${PROJECT_NAME} PROPERTIES VERSION ${MYLIB_VERSION_STRING} SOVERSION ${MYLIB_VERSION_MAJOR})
 
-set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER include/bcrypt/BCrypt.hpp)
+set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER include/bcrypt/bcrypt.hpp)
 
 target_include_directories(${PROJECT_NAME} PRIVATE include)
 target_include_directories(${PROJECT_NAME} PRIVATE src)
